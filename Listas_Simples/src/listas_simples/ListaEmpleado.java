@@ -26,10 +26,12 @@ public class ListaEmpleado {
         Empleado nuevoNodo=new Empleado(nombre, apellido, edad/*, tamano*/);
         if(esVacia()){
             primero=nuevoNodo;
+            fin=nuevoNodo;
         }
         else{
             nuevoNodo.siguiente=primero;
             primero=nuevoNodo;
+            fin=nuevoNodo;
         }        
     }
     public void imprimirNodo(){
@@ -48,6 +50,7 @@ public class ListaEmpleado {
     public void eliminarNodo(){
         if(!esVacia()){
            primero=primero.siguiente;
+           if (primero == null) fin = null;
         }
     }
     //Metodo para buscar un nodo en especifico

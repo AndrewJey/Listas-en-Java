@@ -1,0 +1,9 @@
+[
+  {
+    "project": "Listas_Simples/build.xml",
+    "source": "checks/ListCheck.java",
+    "main": "ListCheck",
+    "headless": true,
+    "classpath": []
+  }
+]

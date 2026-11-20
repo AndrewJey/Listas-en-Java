@@ -54,7 +54,8 @@ public void eliminaNodo(){
     }
     else{
         primero=primero.siguiente;
-        primero.anterior=null;
+        if (primero != null) primero.anterior=null;
+        tamano--;
     }
 }
 // public void borrarElemento(String nombreBuscado){

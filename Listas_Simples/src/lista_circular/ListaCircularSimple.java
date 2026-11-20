@@ -33,21 +33,17 @@ public class ListaCircularSimple {
                 auxiliar=auxiliar.siguiente;
             }
             nuevoNodo.siguiente=primero;
-            primero.anterior=nuevoNodo;
+            auxiliar.siguiente=nuevoNodo;
             primero=nuevoNodo;
         }
     }
     public void imprimirNodo(){
-        PersonaCircular auxiliar=primero;
-        if(esVacia()){
-            System.out.println("lista vacia".toUpperCase());
-        }
-        else{
-            while(auxiliar.siguiente!=primero){
-                System.out.print("Nombre: "+auxiliar.nombre+"\nEdad: "+auxiliar.edad);
-                auxiliar=auxiliar.siguiente;
-            }
-        }
+        if (esVacia()) { System.out.println("LISTA VACIA"); return; }
+        PersonaCircular actual = primero;
+        do {
+            System.out.println("Nombre: " + actual.nombre + "\nEdad: " + actual.edad);
+            actual = actual.siguiente;
+        } while (actual != primero);
     }
     public void eliminarNodo(){
         if(esVacia()){
@@ -62,7 +58,7 @@ public class ListaCircularSimple {
                 auxiliar=auxiliar.siguiente;
             }
             auxiliar.siguiente=auxiliar.siguiente.siguiente;
-            primero=auxiliar.siguiente.siguiente;
+            primero=auxiliar.siguiente;
         }
     }
 //    public boolean eliminaNodo(){
